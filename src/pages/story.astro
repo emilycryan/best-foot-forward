@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { excerpt } from '../lib/excerpt';
+
+const all = (await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true))
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime()); // oldest first
+---
+<Base title="The Story" current="story" description="The whole recovery in order, from Day 1.">
+  <div class="feed" style="max-width:760px;border-right:none">
+    <h1 style="font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px">The whole story, in order</h1>
+    <p style="color:var(--base);margin:0 0 20px">Start at the top and read straight through.</p>
+    {all.length === 0 && <p style="color:var(--base)">Coming soon.</p>}
+    {all.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt((e as any).body ?? '')} />)}
+  </div>
+</Base>
