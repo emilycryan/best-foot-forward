@@ -23,6 +23,6 @@ const { tag, entries } = Astro.props;
 <Base title={`#${tag}`} description={`Entries tagged ${tag}.`}>
   <div class="feed" style="max-width:760px;border-right:none">
     <h1 style="font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px">Tagged: {tag}</h1>
-    {entries.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt((e as any).body ?? '')} />)}
+    {entries.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt(e.body ?? '')} />)}
   </div>
 </Base>

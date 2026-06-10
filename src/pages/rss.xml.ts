@@ -4,7 +4,7 @@ import { site } from '../site.config';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const all = (await getCollection('entries', (e) => !e.data.draft))
+  const all = (await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   return rss({
     title: site.name,

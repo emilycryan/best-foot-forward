@@ -43,7 +43,7 @@ const fun = collectFun(all)[0];
       <p class="feed-hd">Latest entries</p>
       {latest.length === 0 && <p style="color:var(--base)">The first entry is coming soon.</p>}
       {latest.map((e) => {
-        const bodySource = (e as any).body ?? '';
+        const bodySource = e.body ?? '';
         return <EntryCard id={e.id} data={e.data} excerpt={excerpt(bodySource)} />;
       })}
     </div>

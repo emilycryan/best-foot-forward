@@ -24,6 +24,6 @@ const { label, entries } = Astro.props;
   <div class="feed" style="max-width:760px;border-right:none">
     <h1 style="font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px">{label}</h1>
     {entries.length === 0 && <p style="color:var(--base)">No entries in this phase yet.</p>}
-    {entries.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt((e as any).body ?? '')} />)}
+    {entries.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt(e.body ?? '')} />)}
   </div>
 </Base>

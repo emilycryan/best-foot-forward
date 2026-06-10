@@ -12,6 +12,6 @@ const all = (await getCollection('entries', (e) => import.meta.env.PROD ? !e.dat
     <h1 style="font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px">The whole story, in order</h1>
     <p style="color:var(--base);margin:0 0 20px">Start at the top and read straight through.</p>
     {all.length === 0 && <p style="color:var(--base)">Coming soon.</p>}
-    {all.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt((e as any).body ?? '')} />)}
+    {all.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt(e.body ?? '')} />)}
   </div>
 </Base>
