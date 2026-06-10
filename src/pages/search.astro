@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import Search from 'astro-pagefind/components/Search';
+---
+<Base title="Search" current="search">
+  <div class="page">
+    <h1>Search the journal</h1>
+    <p style="color:var(--base)">Search by symptom, milestone, medication, or anything else — "swelling", "BPC-157", "first shower", "driving".</p>
+    <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false, excerptLength: 20 }} />
+  </div>
+</Base>
