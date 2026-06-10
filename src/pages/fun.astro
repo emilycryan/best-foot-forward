@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { collectFun } from '../lib/funFeed';
+import { site } from '../site.config';
+import { dayLabel } from '../lib/day';
+
+const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
+const fun = collectFun(all);
+---
+<Base title="The Fun Stuff" current="fun" description="Everything that had nothing to do with my foot.">
+  <div class="page">
+    <h1>The Fun Stuff</h1>
+    <p style="color:var(--base)">Shows, snacks, impulse buys, and small joys. The lighter side of being stuck on the couch.</p>
+    {fun.length === 0 && <p style="color:var(--base)">Coming soon.</p>}
+    <ul>
+      {fun.map((f) => (
+        <li style="margin-bottom:10px">
+          <a href={`/entries/${f.slug}`}>{dayLabel(f.date, site.surgeryDate)}</a>:
+          {f.watching && <> <b>Watched:</b> {f.watching}</>}
+          {f.ate && <> · <b>Ate:</b> {f.ate}</>}
+          {f.bought && <> · <b>Bought:</b> {f.bought}</>}
+          {f.joy && <> · <b>Joy:</b> {f.joy}</>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
