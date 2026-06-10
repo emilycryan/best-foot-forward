@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import StatusBar from '../components/StatusBar.astro';
+import PhaseStrip from '../components/PhaseStrip.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { site, phases } from '../site.config';
+import { siteStatus } from '../lib/status';
+import { collectFun } from '../lib/funFeed';
+import { excerpt } from '../lib/excerpt';
+
+const all = (await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const status = siteStatus({
+  today: new Date(),
+  surgeryDate: site.surgeryDate,
+  phases,
+  entryCount: all.length,
+});
+
+const counts: Record<string, number> = {};
+for (const e of all) counts[e.data.phase] = (counts[e.data.phase] ?? 0) + 1;
+
+const latest = all.slice(0, 8);
+const tagSet = new Map<string, number>();
+for (const e of all) for (const t of e.data.tags) tagSet.set(t, (tagSet.get(t) ?? 0) + 1);
+const popularTags = [...tagSet.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([t]) => t);
+
+const fun = collectFun(all)[0];
+---
+<Base current="home">
+  <section class="hero">
+    <h1>{site.tagline}</h1>
+    <p class="sub">{site.description}</p>
+    <StatusBar status={status} />
+  </section>
+
+  <PhaseStrip currentPhase={status.currentPhase} counts={counts} />
+
+  <div class="home-main">
+    <div class="feed">
+      <p class="feed-hd">Latest entries</p>
+      {latest.length === 0 && <p style="color:var(--base)">The first entry is coming soon.</p>}
+      {latest.map((e) => {
+        const bodySource = (e as any).body ?? '';
+        return <EntryCard id={e.id} data={e.data} excerpt={excerpt(bodySource)} />;
+      })}
+    </div>
+
+    <aside class="side">
+      <div class="sbox start">
+        <div class="sh">New here?</div>
+        <div class="sb">Start at <a href="/story">Day 1 →</a> and read the journey in order, pre-op through recovery.</div>
+      </div>
+      {popularTags.length > 0 && (
+        <div class="sbox neutral">
+          <div class="sh">Popular tags</div>
+          <div class="sb"><div class="tagcloud">{popularTags.map((t) => <a href={`/tags/${t}`}>{t}</a>)}</div></div>
+        </div>
+      )}
+      {fun && (
+        <div class="sbox fun">
+          <div class="sh">The Fun Stuff</div>
+          <div class="sb">{fun.watching && <>Currently bingeing <b>{fun.watching}</b>. </>}<a href="/fun">See all →</a></div>
+        </div>
+      )}
+    </aside>
+  </div>
+</Base>
