@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { excerpt } from '../../lib/excerpt';
+import { phases } from '../../site.config';
+import type { PhaseId } from '../../lib/entry-schema';
+
+export async function getStaticPaths() {
+  const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
+  return phases.map((p) => ({
+    params: { phase: p.id },
+    props: {
+      label: p.label,
+      entries: all
+        .filter((e) => e.data.phase === (p.id as PhaseId))
+        .sort((a, b) => a.data.date.getTime() - b.data.date.getTime()),
+    },
+  }));
+}
+const { label, entries } = Astro.props;
+---
+<Base title={label} description={`Entries from the ${label} phase.`}>
+  <div class="feed" style="max-width:760px;border-right:none">
+    <h1 style="font-size:30px;font-weight:900;letter-spacing:-.02em;margin:0 0 20px">{label}</h1>
+    {entries.length === 0 && <p style="color:var(--base)">No entries in this phase yet.</p>}
+    {entries.map((e) => <EntryCard id={e.id} data={e.data} excerpt={excerpt((e as any).body ?? '')} />)}
+  </div>
+</Base>
