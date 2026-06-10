@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import VitalsStrip from '../../components/VitalsStrip.astro';
+import Callout from '../../components/Callout.astro';
+import ProtocolGrid from '../../components/ProtocolGrid.astro';
+import FunStuff from '../../components/FunStuff.astro';
+import { site, phases } from '../../site.config';
+import { dayLabel } from '../../lib/day';
+
+export async function getStaticPaths() {
+  const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const phaseLabel = phases.find((p) => p.id === data.phase)?.label ?? data.phase;
+const day = dayLabel(data.date, site.surgeryDate);
+const dateStr = data.date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title={data.title} description={data.comparison ?? data.title}>
+  <article class="entry" data-pagefind-body>
+    <div class="entry-head">
+      <div class="entry-headtext">
+        <div class="entry-tags">
+          <span class="tag-phase">{phaseLabel}</span>
+          <span class="tag-day">{day}</span>
+        </div>
+        <h1 class="entry-title">{data.title}</h1>
+        <div class="entry-date">{dateStr}</div>
+      </div>
+      {data.photo && (
+        <div class="entry-photo"><img src={data.photo} alt={data.photoAlt ?? ''} /></div>
+      )}
+    </div>
+
+    <VitalsStrip data={data} />
+
+    <div class="entry-body">
+      <Content />
+      {data.wins?.length && <Callout variant="win" label="Firsts & Wins" items={data.wins} />}
+      {data.protocols && <ProtocolGrid protocols={data.protocols} />}
+      {data.comparison && (
+        <Callout variant="cmp" label={`vs. ${site.priorSurgery.label} (${site.priorSurgery.year})`} text={data.comparison} />
+      )}
+      {data.questionsForSurgeon?.length && <Callout variant="ask" label="Questions for my surgeon" items={data.questionsForSurgeon} />}
+      {data.funStuff && <FunStuff funStuff={data.funStuff} />}
+    </div>
+
+    {data.tags.length > 0 && (
+      <div class="entry-foot">
+        <span style="font-size:12px;color:var(--base);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-right:3px">Tags</span>
+        {data.tags.map((t) => <a class="ftag" href={`/tags/${t}`}>{t}</a>)}
+      </div>
+    )}
+  </article>
+</Base>
