@@ -1,0 +1,24 @@
+---
+import type { EntryData } from '../lib/entry-schema';
+import { site, phases } from '../site.config';
+import { dayLabel } from '../lib/day';
+interface Props { id: string; data: EntryData; excerpt?: string; }
+const { id, data, excerpt } = Astro.props;
+const phaseLabel = phases.find((p) => p.id === data.phase)?.label ?? data.phase;
+const day = dayLabel(data.date, site.surgeryDate);
+---
+<div class="ecard">
+  <a class="ethumb" href={`/entries/${id}`}>
+    {data.photo ? <img src={data.photo} alt={data.photoAlt ?? ''} /> : '▣'}
+  </a>
+  <div class="b">
+    <div class="tags"><span class="daychip">{day}</span><span class="phaselbl">{phaseLabel}</span></div>
+    <h3><a class="t" href={`/entries/${id}`}>{data.title}</a></h3>
+    {excerpt && <p class="ex">{excerpt}</p>}
+    <div class="meta">
+      {data.pain != null && <span>Pain <b>{data.pain}/10</b></span>}
+      {data.weightBearing && <span>{data.weightBearing}</span>}
+      {data.tags.length > 0 && <span>{data.tags.slice(0, 3).join(' · ')}</span>}
+    </div>
+  </div>
+</div>

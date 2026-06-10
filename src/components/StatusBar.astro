@@ -1,0 +1,17 @@
+---
+import type { SiteStatus } from '../lib/status';
+import { site, phases } from '../site.config';
+import { dayLabel } from '../lib/day';
+interface Props { status: SiteStatus; }
+const { status } = Astro.props;
+const phaseLabel = phases.find((p) => p.id === status.currentPhase)?.label ?? status.currentPhase;
+const today = new Date();
+const dayText = dayLabel(today, site.surgeryDate);
+const surgeryStr = site.surgeryDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<div class="statusbar">
+  <div class="s"><div class="l">Surgery</div><div class="v">{surgeryStr}</div></div>
+  <div class="s"><div class="l">Currently</div><div class="v" style="color:var(--pink)">{dayText}</div></div>
+  <div class="s"><div class="l">Phase</div><div class="v" style="font-size:15px">{phaseLabel}</div></div>
+  <div class="s"><div class="l">Entries</div><div class="v">{status.entryCount}</div></div>
+</div>

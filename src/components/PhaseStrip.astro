@@ -1,0 +1,21 @@
+---
+import { phases } from '../site.config';
+import { phaseStatus, type PhaseDef } from '../lib/phases';
+import type { PhaseId } from '../lib/entry-schema';
+interface Props { currentPhase: PhaseId; counts: Record<string, number>; }
+const { currentPhase, counts } = Astro.props;
+const labelFor = (n: number, status: string) =>
+  status === 'soon' && n === 0 ? 'upcoming' : `${n} ${n === 1 ? 'entry' : 'entries'}`;
+---
+<nav class="phases" aria-label="Recovery phases">
+  {phases.map((p: PhaseDef) => {
+    const status = phaseStatus(p.id, currentPhase, phases);
+    const n = counts[p.id] ?? 0;
+    return (
+      <a class={`phase ${status}`} href={`/phase/${p.id}`}>
+        <div class="pn">{p.label}</div>
+        <div class="pc">{labelFor(n, status)}</div>
+      </a>
+    );
+  })}
+</nav>
