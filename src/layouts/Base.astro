@@ -1,0 +1,58 @@
+---
+import '@fontsource/public-sans/400.css';
+import '@fontsource/public-sans/600.css';
+import '@fontsource/public-sans/700.css';
+import '@fontsource/public-sans/800.css';
+import '@fontsource/public-sans/900.css';
+import '../styles/app.css';
+import { site, disclaimerShort } from '../site.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string; // nav highlight key
+}
+const { title, description = site.description, current } = Astro.props;
+const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.tagline}`;
+const nav = [
+  { key: 'story', href: '/story', label: 'The Story' },
+  { key: 'protocols', href: '/protocols', label: 'Protocols' },
+  { key: 'fun', href: '/fun', label: 'Fun Stuff' },
+  { key: 'about', href: '/about', label: 'About' },
+  { key: 'search', href: '/search', label: 'Search' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="alternate" type="application/rss+xml" title={site.name} href="/rss.xml" />
+  </head>
+  <body>
+    <header class="site-bar wrap">
+      <a class="site-brand" href="/">{site.name}<span class="dot">.</span></a>
+      <nav class="site-nav">
+        <a href="/" class={current === 'home' ? 'on' : ''}>Home</a>
+        {nav.map((n) => <a href={n.href} class={current === n.key ? 'on' : ''}>{n.label}</a>)}
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-foot wrap">
+      <div class="links">
+        <a href="/story">The Story</a><a href="/search">Search</a><a href="/rss.xml">RSS</a><a href="/about">About</a>
+      </div>
+      <div>{disclaimerShort}</div>
+    </footer>
+  </body>
+</html>
