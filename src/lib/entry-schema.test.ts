@@ -30,4 +30,8 @@ describe('entrySchema', () => {
       'pre-op', 'surgery', 'early-recovery', 'boot-transition', 'walking-pt', 'full-recovery',
     ]);
   });
+  it('accepts pain at the 0 and 10 boundaries', () => {
+    expect(entrySchema.parse({ title: 'x', date: '2026-06-30', phase: 'surgery', pain: 0 }).pain).toBe(0);
+    expect(entrySchema.parse({ title: 'x', date: '2026-06-30', phase: 'surgery', pain: 10 }).pain).toBe(10);
+  });
 });

@@ -4,7 +4,7 @@
 export function daysFromSurgery(date: Date, surgeryDate: Date): number {
   const MS_PER_DAY = 86_400_000;
   const at = (d: Date) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
-  return Math.round((at(date) - at(surgeryDate)) / MS_PER_DAY);
+  return (at(date) - at(surgeryDate)) / MS_PER_DAY;
 }
 
 /** Human label used on chips and headers. */

@@ -10,6 +10,7 @@ export interface PhaseDef {
 
 /** The phase the journey is in on a given surgery-relative day. */
 export function currentPhaseId(currentDay: number, phases: PhaseDef[]): PhaseId {
+  if (phases.length === 0) throw new Error('phases array must not be empty');
   let current = phases[0].id;
   for (const p of phases) {
     if (currentDay >= p.startDay) current = p.id;
@@ -24,6 +25,7 @@ export function phaseStatus(phaseId: PhaseId, currentId: PhaseId, phases: PhaseD
   const order = (id: PhaseId) => phases.findIndex((p) => p.id === id);
   const a = order(phaseId);
   const b = order(currentId);
+  if (a === -1 || b === -1) throw new Error('Unknown phase id passed to phaseStatus');
   if (a < b) return 'done';
   if (a === b) return 'active';
   return 'soon';

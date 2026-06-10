@@ -24,6 +24,9 @@ describe('currentPhaseId', () => {
   it('advances to boot-transition at 6 weeks', () => {
     expect(currentPhaseId(45, phases)).toBe('boot-transition');
   });
+  it('hits boot-transition exactly at day 42', () => {
+    expect(currentPhaseId(42, phases)).toBe('boot-transition');
+  });
 });
 
 describe('phaseStatus', () => {

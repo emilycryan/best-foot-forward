@@ -19,4 +19,7 @@ describe('collectFun', () => {
     expect(fun.map((f) => f.slug)).toEqual(['c', 'a']);
     expect(fun[0].ate).toBe('ramen');
   });
+  it('returns empty for no entries', () => {
+    expect(collectFun([])).toEqual([]);
+  });
 });

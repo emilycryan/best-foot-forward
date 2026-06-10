@@ -19,4 +19,7 @@ describe('collectProtocols', () => {
     expect(peptides.map((p) => p.slug)).toEqual(['a', 'b']); // oldest first, only entries with peptides
     expect(peptides[0].items).toEqual(['TB-500']);
   });
+  it('returns empty for no entries', () => {
+    expect(collectProtocols([], 'medications')).toEqual([]);
+  });
 });

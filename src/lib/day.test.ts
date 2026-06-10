@@ -26,4 +26,10 @@ describe('dayLabel', () => {
   it('counts up after surgery', () => {
     expect(dayLabel(new Date('2026-07-14'), surgery)).toBe('Day 14');
   });
+  it('shows 1d to surgery the day before', () => {
+    expect(dayLabel(new Date('2026-06-29'), surgery)).toBe('Pre-op · 1d to surgery');
+  });
+  it('labels day 1 the day after surgery', () => {
+    expect(dayLabel(new Date('2026-07-01'), surgery)).toBe('Day 1');
+  });
 });
