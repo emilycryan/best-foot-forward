@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { collectProtocols, type ProtocolCategory } from '../lib/protocols';
+import { site } from '../site.config';
+import { dayLabel } from '../lib/day';
+
+const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
+const cats: { key: ProtocolCategory; label: string }[] = [
+  { key: 'medications', label: 'Medications' },
+  { key: 'peptides', label: 'Peptides' },
+  { key: 'exercise', label: 'PT / Exercise' },
+];
+const sections = cats.map((c) => ({ ...c, snapshots: collectProtocols(all, c.key) }));
+---
+<Base title="Protocols" current="protocols" description="How my medications, peptides, and PT evolved over recovery.">
+  <div class="page">
+    <h1>Protocols over time</h1>
+    <p style="color:var(--base)">What I actually took and did, by date. Not advice — see the <a href="/about">disclaimer</a>.</p>
+    {sections.map((s) => (
+      <section>
+        <h2>{s.label}</h2>
+        {s.snapshots.length === 0 ? <p style="color:var(--base)">Nothing logged yet.</p> : (
+          <ul>
+            {s.snapshots.map((snap) => (
+              <li>
+                <a href={`/entries/${snap.slug}`}>{dayLabel(snap.date, site.surgeryDate)}</a>: {snap.items.join(', ')}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))}
+  </div>
+</Base>
