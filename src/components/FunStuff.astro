@@ -1,0 +1,19 @@
+---
+import type { EntryData } from '../lib/entry-schema';
+interface Props { funStuff: NonNullable<EntryData['funStuff']>; }
+const { funStuff } = Astro.props;
+const items = [
+  { l: 'Binged', v: funStuff.watching },
+  { l: 'Add-to-cart casualty', v: funStuff.bought },
+  { l: 'Ate', v: funStuff.ate },
+  { l: 'Small joy', v: funStuff.joy },
+].filter((i) => i.v);
+---
+{items.length > 0 && (
+  <div class="fun">
+    <div class="fun-head"><span>The Fun Stuff</span><span class="sub">nothing to do with my foot</span></div>
+    <div class="fun-grid">
+      {items.map((i) => (<div class="fun-item"><div class="l">{i.l}</div><div class="v">{i.v}</div></div>))}
+    </div>
+  </div>
+)}

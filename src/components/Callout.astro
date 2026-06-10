@@ -1,0 +1,9 @@
+---
+interface Props { variant: 'win' | 'cmp' | 'ask'; label: string; items?: string[]; text?: string; }
+const { variant, label, items, text } = Astro.props;
+---
+<div class={`callout ${variant}`}>
+  <div class="l">{label}</div>
+  {items && <ul>{items.map((i) => <li>{i}</li>)}</ul>}
+  {text && <div>{text}</div>}
+</div>

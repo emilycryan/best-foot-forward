@@ -1,0 +1,19 @@
+---
+import type { EntryData } from '../lib/entry-schema';
+interface Props { data: EntryData; }
+const { data } = Astro.props;
+const cells = [
+  data.pain != null ? { l: 'Pain', v: `${data.pain} /10`, color: 'var(--pink)' } : null,
+  data.weightBearing ? { l: 'Weight-bearing', v: data.weightBearing, color: 'var(--purple)' } : null,
+  data.mobility ? { l: 'Mobility', v: data.mobility, color: 'var(--ink)' } : null,
+  data.mood ? { l: 'Mood', v: data.mood, color: 'var(--ink)' } : null,
+  data.swelling ? { l: 'Swelling', v: data.swelling, color: 'var(--ink)' } : null,
+].filter(Boolean) as { l: string; v: string; color: string }[];
+---
+{cells.length > 0 && (
+  <div class="vitals" style={`grid-template-columns: repeat(${cells.length}, 1fr)`}>
+    {cells.map((c) => (
+      <div class="vital"><div class="l">{c.l}</div><div class="v" style={`color:${c.color}`}>{c.v}</div></div>
+    ))}
+  </div>
+)}
