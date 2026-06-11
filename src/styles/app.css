@@ -96,7 +96,7 @@ a { color: var(--pink-dark); }
 .entry-date { color: var(--base); font-size: 13px; font-weight: 600; margin-top: 10px; }
 .entry-title { margin: 0; font-size: 25px; font-weight: 800; line-height: 1.2; letter-spacing: -.01em; }
 .entry-photo { flex: 0 0 168px; }
-.entry-photo img { width: 168px; height: 122px; object-fit: cover; border: 1px solid var(--line); border-radius: 5px; }
+.entry-photo img { width: 168px; height: auto; border: 1px solid var(--line); border-radius: 5px; }
 .vitals { display: grid; grid-template-columns: repeat(4, 1fr); }
 .vital { padding: 14px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .vital:last-child { border-right: none; }
