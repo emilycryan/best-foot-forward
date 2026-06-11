@@ -15,7 +15,7 @@ protocols:
   medications: ["Tylenol 1g 3x/day"]
   peptides: ["BPC-157 250mcg 2x/day"]
   exercise: ["Toe wiggles 3x/day"]
-comparison: "How this compares to the left foot in 2023."
+comparison: "How this compares to the left foot in 2022."
 questionsForSurgeon:
   - "A question to raise at the next visit."
 funStuff:

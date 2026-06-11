@@ -6,7 +6,7 @@ export const site = {
   description:
     "An honest, structured log of my second foot reconstruction (osteotomies, FDL transfer, spring ligament repair). The stuff I couldn't find when I searched for it myself.",
   surgeryDate: new Date('2026-06-30'),
-  priorSurgery: { label: 'Left foot', year: 2023 },
+  priorSurgery: { label: 'Left foot', year: 2022 },
 };
 
 // The recovery spine. Edit `startDay` values to match the real timeline;

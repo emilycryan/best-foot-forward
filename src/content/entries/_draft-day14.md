@@ -14,7 +14,7 @@ protocols:
   medications: ["Tylenol 1g 3x/day", "Aspirin 81mg (DVT)"]
   peptides: ["BPC-157 250mcg 2x/day", "TB-500 weekly"]
   exercise: ["Toe wiggles 3x/day", "Ankle pumps, seated"]
-comparison: "Pain about a point lower than the left foot in 2023."
+comparison: "Pain about a point lower than the left foot in 2022."
 funStuff:
   watching: "The Bear, S3"
   bought: "Heated foot-rest blanket"
