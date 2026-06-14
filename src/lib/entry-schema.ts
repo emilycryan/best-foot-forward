@@ -22,6 +22,7 @@ export const entrySchema = z.object({
     medications: z.array(z.string()).optional(),
     peptides: z.array(z.string()).optional(),
     exercise: z.array(z.string()).optional(),
+    bodywork: z.array(z.string()).optional(),
   }).optional(),
   comparison: z.string().optional(),
   questionsForSurgeon: z.array(z.string()).optional(),

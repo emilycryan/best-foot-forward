@@ -6,6 +6,7 @@ const cols = [
   { cls: 'm', label: 'Medications', items: protocols.medications },
   { cls: 'p', label: 'Peptides', items: protocols.peptides },
   { cls: 'e', label: 'PT / Exercise', items: protocols.exercise },
+  { cls: 'b', label: 'Bodywork / Massage', items: protocols.bodywork },
 ].filter((c) => c.items && c.items.length);
 ---
 {cols.length > 0 && (

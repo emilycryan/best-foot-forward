@@ -9,11 +9,15 @@ import { site, phases } from '../../site.config';
 import { dayLabel } from '../../lib/day';
 
 export async function getStaticPaths() {
-  const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
-  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  const all = (await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true))
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime()); // oldest first, like the Story
+  return all.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: all[i - 1] ?? null, next: all[i + 1] ?? null },
+  }));
 }
 
-const { entry } = Astro.props;
+const { entry, prev, next } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 const phaseLabel = phases.find((p) => p.id === data.phase)?.label ?? data.phase;
@@ -56,4 +60,23 @@ const dateStr = data.date.toLocaleDateString('en-US', { weekday: 'short', year: 
       </div>
     )}
   </article>
+
+  {(prev || next) && (
+    <nav class="entry-nav" aria-label="More entries">
+      {prev ? (
+        <a class="en-prev" href={`/entries/${prev.id}`} rel="prev">
+          <span class="en-dir">← Previous</span>
+          <span class="en-title">{prev.data.title}</span>
+          <span class="en-day">{dayLabel(prev.data.date, site.surgeryDate)}</span>
+        </a>
+      ) : <span class="en-spacer"></span>}
+      {next ? (
+        <a class="en-next" href={`/entries/${next.id}`} rel="next">
+          <span class="en-dir">Next →</span>
+          <span class="en-title">{next.data.title}</span>
+          <span class="en-day">{dayLabel(next.data.date, site.surgeryDate)}</span>
+        </a>
+      ) : <span class="en-spacer"></span>}
+    </nav>
+  )}
 </Base>

@@ -10,6 +10,7 @@ const cats: { key: ProtocolCategory; label: string }[] = [
   { key: 'medications', label: 'Medications' },
   { key: 'peptides', label: 'Peptides' },
   { key: 'exercise', label: 'PT / Exercise' },
+  { key: 'bodywork', label: 'Bodywork / Massage' },
 ];
 const sections = cats.map((c) => ({ ...c, snapshots: collectProtocols(all, c.key) }));
 ---
