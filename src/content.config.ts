@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { entrySchema } from './lib/entry-schema';
 
@@ -8,4 +8,13 @@ const entries = defineCollection({
   schema: entrySchema,
 });
 
-export const collections = { entries };
+const protocols = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/protocols' }),
+  schema: z.object({
+    showTimeline: z.boolean().default(true),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+  }),
+});
+
+export const collections = { entries, protocols };
