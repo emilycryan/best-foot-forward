@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CategoryVisual from '../../components/CategoryVisual.astro';
 import { PROTOCOL_CATEGORIES, getCategory } from '../../lib/protocol-categories';
+import type { ProtocolCategory } from '../../lib/protocol-categories';
 import { collectProtocols } from '../../lib/protocols';
 import { site } from '../../site.config';
 import { dayLabel } from '../../lib/day';
@@ -21,7 +22,7 @@ const cat = getCategory(category!)!;
 
 const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
 const showTimeline = page?.data.showTimeline ?? true;
-const timeline = showTimeline ? collectProtocols(all, cat.key) : [];
+const timeline = showTimeline ? collectProtocols(all, cat.key as ProtocolCategory) : [];
 const Content = page ? (await render(page)).Content : null;
 ---
 <Base title={cat.label} current="protocols" description={cat.blurb}>
