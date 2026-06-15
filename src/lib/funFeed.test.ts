@@ -22,4 +22,11 @@ describe('collectFun', () => {
   it('returns empty for no entries', () => {
     expect(collectFun([])).toEqual([]);
   });
+  it('carries image and imageAlt through to the feed item', () => {
+    const fun = collectFun([
+      make('o', '2026-06-15', { ate: 'Oreos', image: '/entries/oreos.png', imageAlt: 'cookies' }),
+    ]);
+    expect(fun[0].image).toBe('/entries/oreos.png');
+    expect(fun[0].imageAlt).toBe('cookies');
+  });
 });

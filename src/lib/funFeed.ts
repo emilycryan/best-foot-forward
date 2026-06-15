@@ -9,6 +9,8 @@ export interface FunItem {
   bought?: string;
   ate?: string;
   joy?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export function collectFun(entries: { id: string; data: EntryData }[]): FunItem[] {

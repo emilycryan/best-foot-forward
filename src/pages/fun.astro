@@ -14,15 +14,21 @@ const fun = collectFun(all);
     <p style="color:var(--base)">Shows, snacks, impulse buys, and small joys. The lighter side of being stuck on the couch.</p>
     {fun.length === 0 && <p style="color:var(--base)">Coming soon.</p>}
     <ul>
-      {fun.map((f) => (
-        <li style="margin-bottom:10px">
-          <a href={`/entries/${f.slug}`}>{dayLabel(f.date, site.surgeryDate)}</a>:
-          {f.watching && <> <b>Watched:</b> {f.watching}</>}
-          {f.ate && <> · <b>Ate:</b> {f.ate}</>}
-          {f.bought && <> · <b>Bought:</b> {f.bought}</>}
-          {f.joy && <> · <b>Joy:</b> {f.joy}</>}
+      {fun.map((f) => {
+        const bits = ([['Watched', f.watching], ['Ate', f.ate], ['Bought', f.bought], ['Joy', f.joy]] as const)
+          .filter(([, v]) => v);
+        return (
+        <li style="margin-bottom:16px">
+          <a href={`/entries/${f.slug}`}>{dayLabel(f.date, site.surgeryDate)}</a>:{' '}
+          {bits.map(([l, v], i) => (<Fragment>{i > 0 && ' · '}<b>{l}:</b> {v}</Fragment>))}
+          {f.image && (
+            <a href={`/entries/${f.slug}`} style="display:block;margin-top:8px">
+              <img src={f.image} alt={f.imageAlt ?? ''} loading="lazy" style="max-width:220px;width:100%;border:1px solid var(--line);border-radius:5px" />
+            </a>
+          )}
         </li>
-      ))}
+        );
+      })}
     </ul>
   </div>
 </Base>
