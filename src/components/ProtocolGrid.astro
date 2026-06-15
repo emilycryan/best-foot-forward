@@ -1,19 +1,17 @@
 ---
 import type { EntryData } from '../lib/entry-schema';
+import { PROTOCOL_CATEGORIES } from '../lib/protocol-categories';
 interface Props { protocols: NonNullable<EntryData['protocols']>; }
 const { protocols } = Astro.props;
-const cols = [
-  { cls: 'm', label: 'Medications', items: protocols.medications },
-  { cls: 'p', label: 'Peptides', items: protocols.peptides },
-  { cls: 'e', label: 'PT / Exercise', items: protocols.exercise },
-  { cls: 'b', label: 'Bodywork / Massage', items: protocols.bodywork },
-].filter((c) => c.items && c.items.length);
+const cols = PROTOCOL_CATEGORIES
+  .map((c) => ({ label: c.label, color: c.color, items: protocols[c.key] }))
+  .filter((c) => c.items && c.items.length);
 ---
 {cols.length > 0 && (
   <div class="proto" style={`grid-template-columns: repeat(${cols.length}, 1fr)`}>
     {cols.map((c) => (
-      <div class={`c ${c.cls}`}>
-        <div class="cl">{c.label}</div>
+      <div class="c">
+        <div class="cl" style={`color: var(--${c.color}); border-color: var(--${c.color})`}>{c.label}</div>
         <div class="txt">{c.items!.map((i, idx) => (<>{idx > 0 && <br />}{i}</>))}</div>
       </div>
     ))}
