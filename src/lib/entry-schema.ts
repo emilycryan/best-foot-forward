@@ -1,10 +1,15 @@
 // src/lib/entry-schema.ts
 import { z } from 'zod';
+import { categoryKeys } from './protocol-categories';
 
 export const PHASE_IDS = [
   'pre-op', 'surgery', 'early-recovery', 'boot-transition', 'walking-pt', 'full-recovery',
 ] as const;
 export type PhaseId = (typeof PHASE_IDS)[number];
+
+const protocolsShape = Object.fromEntries(
+  categoryKeys.map((k) => [k, z.array(z.string()).optional()]),
+);
 
 export const entrySchema = z.object({
   title: z.string(),
@@ -18,12 +23,7 @@ export const entrySchema = z.object({
   photo: z.string().optional(),
   photoAlt: z.string().optional(),
   wins: z.array(z.string()).optional(),
-  protocols: z.object({
-    medications: z.array(z.string()).optional(),
-    peptides: z.array(z.string()).optional(),
-    exercise: z.array(z.string()).optional(),
-    bodywork: z.array(z.string()).optional(),
-  }).optional(),
+  protocols: z.object(protocolsShape).optional(),
   comparison: z.string().optional(),
   questionsForSurgeon: z.array(z.string()).optional(),
   funStuff: z.object({

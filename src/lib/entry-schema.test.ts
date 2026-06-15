@@ -34,4 +34,13 @@ describe('entrySchema', () => {
     expect(entrySchema.parse({ title: 'x', date: '2026-06-30', phase: 'surgery', pain: 0 }).pain).toBe(0);
     expect(entrySchema.parse({ title: 'x', date: '2026-06-30', phase: 'surgery', pain: 10 }).pain).toBe(10);
   });
+
+  it('accepts supplements and nutrition protocols', () => {
+    const parsed = entrySchema.parse({
+      title: 'x', date: '2026-06-30', phase: 'surgery',
+      protocols: { supplements: ['Vitamin D'], nutrition: ['Protein, 100g/day'] },
+    });
+    expect(parsed.protocols?.supplements).toEqual(['Vitamin D']);
+    expect(parsed.protocols?.nutrition).toEqual(['Protein, 100g/day']);
+  });
 });

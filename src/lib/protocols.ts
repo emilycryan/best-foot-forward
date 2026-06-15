@@ -1,7 +1,8 @@
 // src/lib/protocols.ts
 import type { EntryData } from './entry-schema';
+import type { ProtocolCategory } from './protocol-categories';
 
-export type ProtocolCategory = 'medications' | 'peptides' | 'exercise' | 'bodywork';
+export type { ProtocolCategory };
 
 export interface ProtocolSnapshot {
   slug: string;
