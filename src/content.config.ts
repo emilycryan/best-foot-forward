@@ -18,4 +18,19 @@ const protocols = defineCollection({
   }),
 });
 
-export const collections = { entries, protocols };
+const fun = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/fun' }),
+  schema: z.object({
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    picks: z.array(z.object({
+      name: z.string(),
+      note: z.string().optional(),
+      url: z.string().url().optional(),
+      image: z.string().optional(),
+      imageAlt: z.string().optional(),
+    })).optional(),
+  }),
+});
+
+export const collections = { entries, protocols, fun };

@@ -1,34 +1,35 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { collectFun } from '../lib/funFeed';
-import { site } from '../site.config';
-import { dayLabel } from '../lib/day';
+import CategoryVisual from '../components/CategoryVisual.astro';
+import { FUN_CATEGORIES } from '../lib/fun-categories';
 
-const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
-const fun = collectFun(all);
+const pages = await getCollection('fun');
+
+const cats = [...FUN_CATEGORIES]
+  .sort((a, b) => a.order - b.order)
+  .map((c) => {
+    const page = pages.find((p) => p.id === c.key);
+    return { ...c, image: page?.data.image, imageAlt: page?.data.imageAlt, count: page?.data.picks?.length ?? 0 };
+  });
+
+const statLabel = (count: number) => (count === 0 ? 'New' : `${count} ${count === 1 ? 'pick' : 'picks'}`);
 ---
-<Base title="The Fun Stuff" current="fun" description="Everything that had nothing to do with my foot.">
+<Base title="The Fun Stuff" current="fun" description="Shows, snacks, impulse buys, and small joys. The lighter side of being stuck on the couch.">
   <div class="page">
     <h1>The Fun Stuff</h1>
     <p style="color:var(--base)">Shows, snacks, impulse buys, and small joys. The lighter side of being stuck on the couch.</p>
-    {fun.length === 0 && <p style="color:var(--base)">Coming soon.</p>}
-    <ul>
-      {fun.map((f) => {
-        const bits = ([['Watched', f.watching], ['Ate', f.ate], ['Bought', f.bought], ['Joy', f.joy]] as const)
-          .filter(([, v]) => v);
-        return (
-        <li style="margin-bottom:16px">
-          <a href={`/entries/${f.slug}`}>{dayLabel(f.date, site.surgeryDate)}</a>:{' '}
-          {bits.map(([l, v], i) => (<Fragment>{i > 0 && ' · '}<b>{l}:</b> {v}</Fragment>))}
-          {f.image && (
-            <a href={`/entries/${f.slug}`} style="display:block;margin-top:8px">
-              <img src={f.image} alt={f.imageAlt ?? ''} loading="lazy" style="max-width:220px;width:100%;border:1px solid var(--line);border-radius:5px" />
-            </a>
-          )}
-        </li>
-        );
-      })}
-    </ul>
+    <div class="proto-grid">
+      {cats.map((c) => (
+        <a class="proto-tile" href={`/fun/${c.key}`} style={`color: var(--${c.color})`}>
+          <span class="pv" style={`background: var(--${c.color}-light)`}>
+            <CategoryVisual icon={c.icon} image={c.image} imageAlt={c.imageAlt} />
+          </span>
+          <h2>{c.label}</h2>
+          <p class="blurb">{c.blurb}</p>
+          <span class="stat">{statLabel(c.count)} <span class="arr">→</span></span>
+        </a>
+      ))}
+    </div>
   </div>
 </Base>

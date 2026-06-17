@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CategoryVisual from '../../components/CategoryVisual.astro';
+import { FUN_CATEGORIES, getFunCategory } from '../../lib/fun-categories';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('fun');
+  return FUN_CATEGORIES.map((cat) => ({
+    params: { category: cat.key },
+    props: { page: pages.find((p) => p.id === cat.key) ?? null },
+  }));
+}
+
+const { category } = Astro.params;
+const { page } = Astro.props;
+const cat = getFunCategory(category!)!;
+
+const picks = page?.data.picks ?? [];
+const Content = page ? (await render(page)).Content : null;
+---
+<Base title={cat.label} current="fun" description={cat.blurb}>
+  <div class="page proto-detail">
+    <a class="proto-back" href="/fun">← All the fun stuff</a>
+    <div class="proto-detail-head" style={`color: var(--${cat.color})`}>
+      <span class="pv" style={`background: var(--${cat.color}-light)`}>
+        <CategoryVisual icon={cat.icon} image={page?.data.image} imageAlt={page?.data.imageAlt} />
+      </span>
+      <div>
+        <h1>{cat.label}</h1>
+        <p class="blurb">{cat.blurb}</p>
+      </div>
+    </div>
+
+    {Content && <div class="proto-body"><Content /></div>}
+
+    {picks.length > 0 && (
+      <section class="fun-picks">
+        <ul>
+          {picks.map((p) => (
+            <li class="fun-pick">
+              {p.image && <img class="fun-pick-img" src={p.image} alt={p.imageAlt ?? ''} loading="lazy" />}
+              <div class="fun-pick-body">
+                <div class="fun-pick-name">{p.name}</div>
+                {p.note && <p class="fun-pick-note">{p.note}</p>}
+                {p.url && <a class="fun-pick-link" href={p.url} target="_blank" rel="noopener">Find it →</a>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {!Content && picks.length === 0 && (
+      <p style="color:var(--base)">Nothing here yet.</p>
+    )}
+  </div>
+</Base>

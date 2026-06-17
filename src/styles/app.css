@@ -184,6 +184,17 @@ a { color: var(--pink-dark); }
 .proto-timeline h2 { font-size: 16px; margin: 0 0 10px; }
 .proto-timeline ul { margin: 0; padding-left: 18px; line-height: 1.7; color: #2c2c2c; }
 .proto-timeline li { margin-bottom: 4px; }
+
+/* ---- fun picks ---- */
+.fun-picks { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.fun-picks ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.fun-pick { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fff; }
+.fun-pick-img { flex: 0 0 72px; width: 72px; height: 72px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+.fun-pick-body { flex: 1; min-width: 0; }
+.fun-pick-name { font-weight: 800; font-size: 15.5px; color: var(--ink); }
+.fun-pick-note { margin: 3px 0 8px; color: var(--base); font-size: 14px; line-height: 1.5; }
+.fun-pick-link { font-size: 13px; font-weight: 700; color: var(--pink-dark); text-decoration: none; }
+.fun-pick-link:hover { text-decoration: underline; }
 /* ---- responsive ---- */
 @media (max-width: 720px) {
   .home-main { grid-template-columns: 1fr; }
