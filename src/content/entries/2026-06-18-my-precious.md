@@ -35,7 +35,7 @@ Which is the whole, embarrassing truth of it:
 >
 > I know it helped me run until my tendons exploded. I love it, anyway.
 >
-> I know I have to give it up completely starting Tuesday for at least eight weeks. I... guess I can't love it.
+> I know I have to give it up completely starting Tuesday for at least eight weeks. I guess I can't love it anymore.
 
 On a lighter note, a runner's medicine cabinet deserves better branding. Some names I've collected for the Precious:
 
