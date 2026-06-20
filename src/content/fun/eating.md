@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Firecracker Pop Oreos"
+    note: "Taste like fake fruit blended into a Golden Oreo. Plus points for the 'golden,' minus points for the 'firecracker.'"
+    url: "https://www.cvs.com/shop/oreo-firecracker-pop-sandwich-cookies-limited-edition-11-46-oz-prodid-485393"
+    image: "/entries/rwb-oreos.png"
+    imageAlt: "A red Oreo Limited Edition package dotted with blue and white stars, a 'Firecracker Pop' creme flavor banner, a red-white-and-blue popsicle graphic, and a single golden Oreo cookie; labeled blue raspberry, lemon, and cherry flavor creme."
   - name: "Brown Sugar Pancake Oreos"
     note: "Tastes like the inside of a fancy latte, structurally a cookie. My surgical-news soother of choice."
     url: "https://www.amazon.com/s?k=brown+sugar+pancake+oreos"
