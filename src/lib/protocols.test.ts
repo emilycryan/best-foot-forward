@@ -1,6 +1,6 @@
 // src/lib/protocols.test.ts
 import { describe, it, expect } from 'vitest';
-import { collectProtocols, protocolStat } from './protocols';
+import { collectProtocols, protocolEntryCount } from './protocols';
 import type { EntryData } from './entry-schema';
 
 const make = (id: string, date: string, protocols?: EntryData['protocols']): { id: string; data: EntryData } => ({
@@ -24,19 +24,17 @@ describe('collectProtocols', () => {
   });
 });
 
-describe('protocolStat', () => {
-  it('counts matching entries and finds the earliest date', () => {
+describe('protocolEntryCount', () => {
+  it('counts journal entries that touch the category', () => {
     const entries = [
-      make('b', '2026-07-10', { medications: ['Oxy'] }),
+      make('b', '2026-07-10', { medications: ['Oxy', 'Tylenol'] }),
       make('a', '2026-07-01', { medications: ['Oxy'] }),
       make('c', '2026-07-05', { peptides: ['BPC-157'] }),
     ];
-    const stat = protocolStat(entries, 'medications');
-    expect(stat.count).toBe(2);
-    expect(stat.firstDate).toEqual(new Date('2026-07-01'));
+    expect(protocolEntryCount(entries, 'medications')).toBe(2);
   });
 
-  it('returns zero and null when nothing matches', () => {
-    expect(protocolStat([], 'supplements')).toEqual({ count: 0, firstDate: null });
+  it('returns zero when nothing matches', () => {
+    expect(protocolEntryCount([], 'supplements')).toBe(0);
   });
 });
