@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Cinnamon Bun Oreos"
+    note: "A cream-filled snickerdoodle wearing an Oreo costume. I don't hate them, but they wouldn't be my first pick; apparently the people who've begged for their return for a decade would disagree."
+    url: "https://www.allrecipes.com/oreo-cinnamon-bun-return-12006811"
+    image: "/entries/cinnamonoreo.jpg"
+    imageAlt: "A blue Oreo Limited Edition package with a swirled background, an iced cinnamon bun graphic, and 'Cinnamon Bun' flavor lettering, with a single golden Oreo cookie pictured at the bottom right."
   - name: "Firecracker Pop Oreos"
     note: "Taste like fake fruit blended into a Golden Oreo. Plus points for the 'golden,' minus points for the 'firecracker.'"
     url: "https://www.cvs.com/shop/oreo-firecracker-pop-sandwich-cookies-limited-edition-11-46-oz-prodid-485393"
