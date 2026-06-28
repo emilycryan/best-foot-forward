@@ -49,6 +49,6 @@ While I was farming the internet for interesting things to tell you about all th
 3. **They're the reason I get to recover at home.** Continuous nerve catheters took off in orthopedic surgery precisely because they let so many patients go home with pain control that used to require a hospital stay.
 4. **The worst part isn't waking up.** A lot of patients say the most memorable moment of the whole ordeal isn't coming out of surgery; it's the instant the block wears off and sensation creeps back over the course of several hours.
 
-That last one. *"Sensation gradually returns."* That's the sentence I keep staring at. Last time, sensation didn't gradually return so much as it kicked the door clean off the hinges. So I'm hoping for a small miracle, crossing every finger and toe I've got, and praying the ride is just a little less bumpy this round.
+That last one. *"Sensation creeps back."* That's the sentence I keep staring at. Last time, sensation didn't gradually creep back so much as it kicked the door clean off the hinges. So I'm hoping for a small miracle, crossing every finger and toe I've got, and praying the ride is just a little less bumpy this round.
 
 Here's to being, for once, comfortably numb.
