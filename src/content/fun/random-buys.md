@@ -5,11 +5,11 @@ picks:
     url: "https://www.amazon.com/John-Travolta-Staying-fit-resistance/dp/0671497987"
     image: "/entries/IMG_4229.jpeg"
     imageAlt: "Cover of the 1984 book 'John Travolta: Staying Fit!' A young John Travolta sits in a black sleeveless leotard, chin resting on one hand, gazing at the camera. Blue and cream cover text reads 'Staying Fit! His complete program for reshaping your body through weight resistance training and modern dance techniques.'"
-  - name: "iWALK Hands-Free Crutch"
-    note: "Strap it to my bent knee and suddenly I've got both hands back, even when I'm down to one working leg. Crutches make me feel like a baby giraffe; this makes me feel like a slightly tipsy pirate with a very ergonomic peg leg. Hands free, snack in one hand, coffee in the other. Sold."
-    url: "https://www.amazon.com/iWALK3-0-Hands-Free-Crutch-Alternative/dp/B08WJRWR57/ref=sr_1_1"
-    image: "/entries/iwalker.png"
-    imageAlt: "A smiling woman in a gray t-shirt and blue jeans throws both arms up in the air, hands free, with a black-and-blue iWALK hands-free crutch strapped to her bent left leg and a blue sneaker on her standing right foot."
+  - name: "Banana Dog"
+    note: "My mascot this round. I don't know why, but a week or so ago I simply had to have him. He's goofy and useless and something about him just spoke to me. He is me during this recovery: a weird little yellow thing standing guard over a basket of pill bottles. Sometimes you need a mindless trinket to think about instead of your foot."
+    url: "https://www.amazon.com/Lightweight-Decoration-Decorations-Housewarming-20x9cm7-9x3-5in/dp/B0DP256WJL/"
+    image: "/entries/bananadog.jpeg"
+    imageAlt: "A bright yellow figurine of a dachshund whose body is a banana, with little ears and a goofy snout, standing on a black grid surface in front of a green basket stuffed with prescription pill bottles and a honey-colored bottle."
 ---
 
 The recovery-cart casualties: gadgets, gear, and impulse buys that turned out to help, or at least entertain.

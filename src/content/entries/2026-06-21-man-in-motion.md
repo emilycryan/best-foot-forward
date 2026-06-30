@@ -10,6 +10,9 @@ photoAlt: "Bright purple-white electrical arcs branching upward from a dark hori
 wins:
   - "Pulled the proven gear out of storage instead of re-buying it; past-me made some wise financial decisions"
   - "Started a public Amazon list so the next person doesn't have to guess"
+protocols:
+  exercise:
+    - "iWALK hands-free crutch to stay upright and keep load off the hips and back while non-weight-bearing"
 tags: [pre-op, gear, mobility, iwalk, crutch-life, running-identity]
 draft: false
 ---
