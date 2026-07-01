@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "The Bear (Season 5)"
+    note: "Coming back around once again, for the last time. I hope my foot is taking notes and willing to bow out of orthopedic issues after this is done, too."
+    url: "https://www.hulu.com/search?q=The%20Bear"
+    image: "/entries/bear-cast.png"
+    imageAlt: "Two characters from The Bear stand on a Chicago street. On the left, a curly-haired man in a white t-shirt with forearm tattoos rests his hands on his hips. On the right, a woman in a blue shirt and white overalls stands with her arms crossed, both looking off to the side."
   - name: "America's Sweethearts: Dallas Cowboys Cheerleaders (Season 3)"
     note: "This one was parked on my watch list with a polite 'save it for later' note attached, but I couldn't wait that long, so I jumped the queue and started early. What can I say, the heart wants what the heart wants. #noshame"
     url: "https://www.netflix.com/search?q=America%27s%20Sweethearts"
