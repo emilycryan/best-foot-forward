@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CategoryVisual from '../components/CategoryVisual.astro';
 import { PROTOCOL_CATEGORIES } from '../lib/protocol-categories';
-import { protocolEntryCount } from '../lib/protocols';
+import { displayedEntryCount } from '../lib/protocols';
 
 const all = await getCollection('entries', (e) => import.meta.env.PROD ? !e.data.draft : true);
 const pages = await getCollection('protocols');
@@ -12,7 +12,7 @@ const cats = [...PROTOCOL_CATEGORIES]
   .sort((a, b) => a.order - b.order)
   .map((c) => {
     const page = pages.find((p) => p.id === c.key);
-    return { ...c, image: page?.data.image, imageAlt: page?.data.imageAlt, count: protocolEntryCount(all, c.key) };
+    return { ...c, image: page?.data.image, imageAlt: page?.data.imageAlt, count: displayedEntryCount(all, c.key, page ?? null) };
   });
 
 const statLabel = (count: number) => (count === 0 ? 'New' : `${count} ${count === 1 ? 'entry' : 'entries'}`);
