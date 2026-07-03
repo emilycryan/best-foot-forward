@@ -22,33 +22,24 @@ export function collectProtocols(
     .sort((a, b) => a.date.getTime() - b.date.getTime());
 }
 
-// Matches `/entries/<slug>` references in a protocol page's markdown body.
-// The capture stops at the first non-slug char, so image paths like
-// `/entries/iwalker.jpeg` yield `iwalker`, which won't match a real entry id.
-const ENTRY_REF = /\/entries\/([a-z0-9-]+)/gi;
+// Counts `## ` (h2) section headings in a protocol page's markdown body.
+// `###` and deeper don't match, since the char after `##` must be whitespace.
+const SECTION_HEADING = /^##\s/gm;
 
 /**
- * How many journal entries a protocol's detail page actually surfaces.
- * When the auto timeline is on, that's every entry logging the category;
- * when it's off, it's only the entries hand-linked in the prose. Prose
- * links count only if they resolve to a real entry id, so image references
- * under /entries/ don't inflate the number.
+ * How many things a protocol's detail page presents on the tile.
+ * When the auto timeline is on, that's every journal entry logging the
+ * category (the list the page renders). When it's off, the page is a
+ * curated writeup and the count is the number of items it documents,
+ * one per `##` section (e.g. one heading per peptide).
  */
 export function displayedEntryCount(
   entries: { id: string; data: EntryData }[],
   category: ProtocolCategory,
   page: { body?: string; data: { showTimeline?: boolean } } | null,
 ): number {
-  const validIds = new Set(entries.map((e) => e.id));
-  const shown = new Set<string>();
-
   if (page?.data.showTimeline ?? true) {
-    for (const snap of collectProtocols(entries, category)) shown.add(snap.slug);
+    return collectProtocols(entries, category).length;
   }
-
-  for (const [, slug] of (page?.body ?? '').matchAll(ENTRY_REF)) {
-    if (validIds.has(slug)) shown.add(slug);
-  }
-
-  return shown.size;
+  return ((page?.body ?? '').match(SECTION_HEADING) ?? []).length;
 }

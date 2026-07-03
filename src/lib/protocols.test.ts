@@ -41,22 +41,19 @@ describe('displayedEntryCount', () => {
     expect(displayedEntryCount(entries, 'medications', page)).toBe(2);
   });
 
-  it('counts only prose-linked entries when the timeline is off', () => {
-    const page = { data: { showTimeline: false }, body: 'see [one](/entries/2026-07-01-a).' };
-    expect(displayedEntryCount(entries, 'medications', page)).toBe(1);
+  it('counts `##` sections when the timeline is off', () => {
+    const page = { data: { showTimeline: false }, body: '## BPC-157\ntext\n## TB-500\n## GHK-Cu\n' };
+    expect(displayedEntryCount(entries, 'peptides', page)).toBe(3);
   });
 
-  it('ignores image paths and dead links that are not real entry ids', () => {
-    const page = {
-      data: { showTimeline: false },
-      body: '![gear](/entries/iwalker.jpeg) and [real](/entries/2026-07-01-a)',
-    };
-    expect(displayedEntryCount(entries, 'medications', page)).toBe(1);
+  it('ignores deeper headings and mid-line hashes when counting sections', () => {
+    const page = { data: { showTimeline: false }, body: '## Real\n### Sub\ntext ## not a heading\n#### Deep' };
+    expect(displayedEntryCount(entries, 'peptides', page)).toBe(1);
   });
 
-  it('unions timeline entries with extra prose links', () => {
-    const page = { data: { showTimeline: true }, body: 'aside [peptide](/entries/2026-07-05-c)' };
-    expect(displayedEntryCount(entries, 'medications', page)).toBe(3);
+  it('returns zero for a curated page with no sections', () => {
+    const page = { data: { showTimeline: false }, body: 'Just an intro, no headings.' };
+    expect(displayedEntryCount(entries, 'nutrition', page)).toBe(0);
   });
 
   it('returns zero when nothing matches', () => {

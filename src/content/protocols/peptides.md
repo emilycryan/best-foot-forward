@@ -1,5 +1,5 @@
 ---
-showTimeline: true
+showTimeline: false
 ---
 
 What I use for tissue healing, why I choose it, and how I work it in alongside everything else. The full primer on what peptides are and why I run them, [is in the journal](/entries/2026-06-27-stronger).
