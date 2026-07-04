@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Widow's Bay"
+    note: "A cursed New England town, a mayor determined to make it a tourist trap anyway. So weird. So good."
+    url: "https://tv.apple.com/us/show/widows-bay/umc.cmc.1zzly0vah46bnvnwf0qkrjhh2"
+    image: "/entries/widows.jpg"
+    imageAlt: "Matthew Rhys as a rumpled small-town official sits behind a cluttered wooden desk, hugging a leather folder to his chest with a wary expression, surrounded by bookshelves, a Rolodex, and an old office phone."
   - name: "The Bear (Season 5)"
     note: "Coming back around once again, for the last time. I hope my foot is taking notes and willing to bow out of orthopedic issues after this is done, too."
     url: "https://www.hulu.com/search?q=The%20Bear"

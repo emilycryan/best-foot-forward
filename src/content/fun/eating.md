@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Yala Greek Ice Cream"
+    note: "Hand-delivered by my SIL on the Fourth of July. A 'Mediterranean-style frozen dessert known for its exceptionally light, velvety texture and fruit-forward flavors,' says Google. Exceptional, says me."
+    url: "https://www.yalagreekicecream.com/"
+    image: "/entries/yala.png"
+    imageAlt: "A pint of Yala Greek ice cream in a blue and cream container, overflowing with scoops of white ice cream swirled with berry ribbons, a silver spoon resting beside it."
   - name: "Cinnamon Bun Oreos"
     note: "A cream-filled snickerdoodle wearing an Oreo costume. I don't hate them, but they wouldn't be my first pick; apparently the people who've begged for their return for a decade would disagree."
     url: "https://www.allrecipes.com/oreo-cinnamon-bun-return-12006811"
