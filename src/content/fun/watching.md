@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Sullivan's Crossing"
+    note: "My new syrupy-sweet, guilty-pleasure, Gilmore Girls knock-off romance. Big-city doctor retreats to a quaint small town, sparks fly, feelings are felt. They even cast actual Luke, ball cap included, so honestly the knock-off isn't even hiding it. Neither am I. Zero shame, full commitment."
+    url: "https://www.netflix.com/search?q=Sullivan%27s%20Crossing"
+    image: "/entries/sullivans.jpeg"
+    imageAlt: "Three cast members of Sullivan's Crossing stand at the edge of a lake at dusk: a blond man in a light blue t-shirt, a red-haired woman in a denim shirt with arms crossed, and a gray-bearded man in a dark t-shirt and black ball cap."
   - name: "Widow's Bay"
     note: "A cursed New England town, a mayor determined to make it a tourist trap anyway. So weird. So good."
     url: "https://tv.apple.com/us/show/widows-bay/umc.cmc.1zzly0vah46bnvnwf0qkrjhh2"
