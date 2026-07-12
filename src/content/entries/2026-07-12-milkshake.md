@@ -4,7 +4,7 @@ date: 2026-07-12
 phase: early-recovery
 pain: 2
 weightBearing: NWB
-swelling: moderate
+swelling: mild
 mobility: "Still NWB, still couch-bound — which means I can't do the one thing that lowers blood sugar fastest: walk"
 mood: "Disciplined but human; making peace with the fact that a lot of healing happens in the kitchen, not just the OR"
 photo: "/entries/junkfood.png"
