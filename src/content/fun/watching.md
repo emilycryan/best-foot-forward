@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Harlan Coben's I Will Find You"
+    note: "Two things sold me here. One, it's another one of those networks of characters doing terrible things to each other that Harlan Coben is known for. And two, Helly R. from Severance is in it! Please enjoy her outie doing suburban-thriller things."
+    url: "https://www.netflix.com/search?q=I%20Will%20Find%20You"
+    image: "/entries/find-you.jpg"
+    imageAlt: "The title card for Harlan Coben's I Will Find You: a close-up of Sam Worthington's weathered, intense face beside Britt Lower as a red-haired woman with a wary stare, both framed against a faded, fog-washed suburban street."
   - name: "Sullivan's Crossing"
     note: "My new syrupy-sweet, guilty-pleasure, Gilmore Girls knock-off romance. Big-city doctor retreats to a quaint small town, sparks fly, feelings are felt. They even cast actual Luke, ball cap included, so honestly the knock-off isn't even hiding it. Neither am I. Zero shame, full commitment."
     url: "https://www.netflix.com/search?q=Sullivan%27s%20Crossing"
