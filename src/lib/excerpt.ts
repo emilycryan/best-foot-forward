@@ -3,6 +3,7 @@
 /** Plain-text excerpt from markdown body, truncated on a word boundary. */
 export function excerpt(markdown: string, max = 160): string {
   const text = markdown
+    .replace(/<[^>]+>/g, '')        // HTML tags (img, div, etc.)
     .replace(/^#+\s+/gm, '')        // headings
     .replace(/[*_`>#]/g, '')        // emphasis/code/quote marks
     .replace(/\[(.*?)\]\(.*?\)/g, '$1') // links -> text
