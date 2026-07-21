@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "Shipwrecked: Nightmare at Sea"
+    note: "My BFF came over and we ate seafood while watching poor souls escape a sinking ship. It was both interesting and mortifying. Reaffirms my decision to stay off cruise ships."
+    url: "https://www.netflix.com/search?q=Shipwrecked%3A%20Nightmare%20at%20Sea"
+    image: "/entries/concordia.jpeg"
+    imageAlt: "Promo art for the Costa Concordia documentary: three survivors in the foreground, with the massive white cruise ship capsized on its side in the sea behind them."
   - name: "Harlan Coben's I Will Find You"
     note: "Two things sold me here. One, it's another one of those networks of characters doing terrible things to each other that Harlan Coben is known for. And two, Helly R. from Severance is in it! Please enjoy her outie doing suburban-thriller things."
     url: "https://www.netflix.com/search?q=I%20Will%20Find%20You"

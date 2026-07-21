@@ -115,13 +115,16 @@ a { color: var(--pink-dark); }
 .entry-body img.float-right, .proto-body img.float-right { float: right; width: 50%; margin: 4px 0 14px 22px; }
 .entry-body img.float-right.sm, .proto-body img.float-right.sm { width: 38%; }
 .entry-body img.float-right.xs, .proto-body img.float-right.xs { width: 25%; }
+.entry-body img.float-left, .proto-body img.float-left { float: left; width: 50%; margin: 4px 22px 14px 0; }
+.entry-body img.float-left.sm, .proto-body img.float-left.sm { width: 38%; }
+.entry-body img.float-left.xs, .proto-body img.float-left.xs { width: 25%; }
 .entry-body .photo-grid, .proto-body .photo-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; gap: 10px; margin: 18px 0; }
 .entry-body .photo-grid img, .proto-body .photo-grid img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
 .entry-body .photo-grid .tall, .proto-body .photo-grid .tall { grid-row: span 2; }
 .entry-body .photo-grid.cols-3, .proto-body .photo-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 @media (max-width: 560px) { .entry-body .photo-grid, .proto-body .photo-grid { grid-auto-rows: 150px; } }
 .entry-body h2, .entry-body h3 { line-height: 1.25; }
-.callout { padding: 14px 18px; margin: 18px 0; border-left: 5px solid; background: var(--lightest); }
+.callout { padding: 14px 18px; margin: 18px 0; border-left: 5px solid; background: var(--lightest); clear: both; }
 .callout .l { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 7px; }
 .callout ul { margin: 0; padding-left: 18px; line-height: 1.6; }
 .callout.win { border-color: var(--pink); background: var(--pink-light); }
@@ -213,7 +216,10 @@ a { color: var(--pink-dark); }
   .entry-photo, .entry-photo img { width: 100%; }
   .entry-body img.float-right.xs, .proto-body img.float-right.xs,
   .entry-body img.float-right.sm, .proto-body img.float-right.sm,
-  .entry-body img.float-right, .proto-body img.float-right { float: none; width: 100%; margin: 18px 0; }
+  .entry-body img.float-right, .proto-body img.float-right,
+  .entry-body img.float-left.xs, .proto-body img.float-left.xs,
+  .entry-body img.float-left.sm, .proto-body img.float-left.sm,
+  .entry-body img.float-left, .proto-body img.float-left { float: none; width: 100%; margin: 18px 0; }
   .phases { flex-wrap: wrap; }
   .phase { flex: 1 0 33%; }
 }
