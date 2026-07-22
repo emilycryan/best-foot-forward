@@ -1,7 +1,7 @@
 ---
 title: "Footloose"
 date: 2026-07-20
-phase: early-recovery
+phase: boot-transition
 pain: 2
 weightBearing: NWB
 swelling: mild
@@ -13,7 +13,7 @@ wins:
   - "Every last stitch is OUT (and there were a lot of them)"
   - "Dr. Stein popped in and was blown away by how good the foot looks at 3 weeks"
   - "Medical clearance to keep on keeping on; next stop August 13"
-tags: [early-recovery, milestone, stitches, follow-up, healing, shin-watch]
+tags: [boot-transition, milestone, stitches, follow-up, healing, shin-watch]
 draft: false
 ---
 

@@ -15,7 +15,7 @@ export const phases: PhaseDef[] = [
   { id: 'pre-op', label: 'Pre-op', startDay: -Infinity },
   { id: 'surgery', label: 'Surgery', startDay: 0 },
   { id: 'early-recovery', label: 'Early Recovery', startDay: 1 },
-  { id: 'boot-transition', label: 'Boot / Transition', startDay: 42 },
+  { id: 'boot-transition', label: 'Boot / Transition', startDay: 20 },
   { id: 'walking-pt', label: 'Walking & PT', startDay: 70 },
   { id: 'full-recovery', label: 'Full Recovery', startDay: 168 },
 ];

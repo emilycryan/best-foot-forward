@@ -1,7 +1,7 @@
 ---
 title: "Personal Jesus"
 date: 2026-07-21
-phase: early-recovery
+phase: boot-transition
 pain: 2
 weightBearing: NWB
 swelling: mild
@@ -13,7 +13,7 @@ wins:
   - "First day back lifting heavy weights, exactly 3 weeks post-op"
   - "The foot got its first bath"
   - "Booger turned 4 years old"
-tags: [early-recovery, milestone, strength-training, gym, booger, birthday]
+tags: [boot-transition, milestone, strength-training, gym, booger, birthday]
 draft: false
 ---
 
