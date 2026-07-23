@@ -43,7 +43,7 @@ const Content = page ? (await render(page)).Content : null;
               <div class="fun-pick-body">
                 <div class="fun-pick-name">{p.name}</div>
                 {p.note && <p class="fun-pick-note">{p.note}</p>}
-                {p.url && <a class="fun-pick-link" href={p.url} target="_blank" rel="noopener">Find it →</a>}
+                {p.url && cat.key !== 'eating' && <a class="fun-pick-link" href={p.url} target="_blank" rel="noopener">Find it →</a>}
               </div>
             </li>
           ))}

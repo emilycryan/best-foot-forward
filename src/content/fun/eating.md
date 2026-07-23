@@ -20,6 +20,10 @@ picks:
     url: "https://www.amazon.com/s?k=brown+sugar+pancake+oreos"
     image: "/entries/brownsugar-oreos.png"
     imageAlt: "A purple package of brown sugar pancake oreos, with the blue OREO logo and bold BTS lettering over a neon cityscape, two cream-filled chocolate cookies pictured at the bottom and Korean lettering for the brown sugar pancake flavor."
+  - name: "Toffee Crunch Oreos"
+    note: "Holy moly these are incredible! Imagine a smooth chocolatey filling inside of two cookies but with crunchy sugary bits. Two chocolate covered thumbs up."
+    image: "/entries/toffee-oreos.webp"
+    imageAlt: "A blue Family Size OREO package with a 'Toffee Crunch' flavor creme banner, a layered toffee graphic, a single chocolate sandwich cookie, and text reading toffee flavor creme artificially flavored with sugar crystals."
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
