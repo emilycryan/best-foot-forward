@@ -24,6 +24,10 @@ picks:
     note: "Holy moly these are incredible! Imagine a smooth chocolatey filling inside of two cookies but with crunchy sugary bits. Two chocolate covered thumbs up."
     image: "/entries/toffee-oreos.webp"
     imageAlt: "A blue Family Size OREO package with a 'Toffee Crunch' flavor creme banner, a layered toffee graphic, a single chocolate sandwich cookie, and text reading toffee flavor creme artificially flavored with sugar crystals."
+  - name: "Maple Creme Oreos"
+    note: "Nom nom nom Maple Creme Oreos! These taste a bit like the BTS Brown Sugar Pancake Oreos without the weird blue color. They are also ... creamier? Less sweet? Not sure but those Canadians sure do know how to make anything better with the blood of trees."
+    image: "/entries/maple-oreos.jpg"
+    imageAlt: "An orange Christie 'Maple Creme Oreo / Crème à l'érable' package baked in Canada, with golden sandwich cookies, scattered red maple leaves, a bottle of maple syrup, and a badge reading 'Made with Real Quebec Maple Syrup.'"
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
