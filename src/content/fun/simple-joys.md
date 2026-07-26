@@ -10,6 +10,10 @@ picks:
     url: "https://www.amazon.com/Foot-Surgery-Activity-Book-Distraction/dp/B0F55KYTFW/"
     image: "/entries/foot-book.jpg"
     imageAlt: "Cover of the 'Foot Surgery Activity Book' by Estoria Press. Bold white block letters on a black sticker-style outline spell the title against a soft blue background scattered with illustrated eucalyptus leaves. A small smiley face sits beside the word BOOK, and a black banner underneath reads 'Step aside, I'm healing here.'"
+  - name: "Naps with Booger"
+    note: "Booger, tuckered out from just being a perfect pup. Me, exhausted from regrowing foot parts. 12/10, had a good nap together and would recommend."
+    image: "/entries/napdog.jpeg"
+    imageAlt: "Booger the dog curled up fast asleep during a nap."
 ---
 
 The small intangible stuff: sunny windowsills, dog naps, and tiny wins that have nothing to do with my foot.

@@ -10,6 +10,11 @@ picks:
     url: "https://www.amazon.com/Lightweight-Decoration-Decorations-Housewarming-20x9cm7-9x3-5in/dp/B0DP256WJL/"
     image: "/entries/bananadog.jpeg"
     imageAlt: "A bright yellow figurine of a dachshund whose body is a banana, with little ears and a goofy snout, standing on a black grid surface in front of a green basket stuffed with prescription pill bottles and a honey-colored bottle."
+  - name: "Two Sand-Filled Stretchy Banana Dogs"
+    note: "The Banana Dog situation has escalated. These ones are stretchy. They're bananas. They are dogs. And there are TWO OF THEM. These gems are made of thin rubber and tightly packed sand. They don't snap back into shape but ngl, I don't hate that."
+    url: "https://www.amazon.com/Banana-Shaped-Squishy-Stretchy-Stress/dp/B0GYS3N755/"
+    image: "/entries/bananadogs.jpeg"
+    imageAlt: "Two soft, stretchy sand-filled banana dog toys; yellow banana-shaped bodies with little dog faces, sitting side by side."
 ---
 
 The recovery-cart casualties: gadgets, gear, and impulse buys that turned out to help, or at least entertain.
