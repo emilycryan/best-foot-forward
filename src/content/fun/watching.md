@@ -1,5 +1,10 @@
 ---
 picks:
+  - name: "The Beast in Me"
+    note: "Claire Danes and Matthew Rhys glaring at each other across a property line for eight episodes, and I was on the edge of my seat the whole time. Which, frankly, is exactly the kind of show I need right now: something gripping enough to keep me pinned to the couch instead of quietly scheming my next run. My foot thanks the writers."
+    url: "https://www.netflix.com/search?q=The%20Beast%20in%20Me"
+    image: "/entries/beast.webp"
+    imageAlt: "Poster for The Beast in Me: Claire Danes with dark hair and a gray sweater looks warily over her shoulder toward the camera, while Matthew Rhys watches her through a windowpane behind her, the bold white title stacked between them."
   - name: "Shipwrecked: Nightmare at Sea"
     note: "My BFF came over and we ate seafood while watching poor souls escape a sinking ship. It was both interesting and mortifying. Reaffirms my decision to stay off cruise ships."
     url: "https://www.netflix.com/search?q=Shipwrecked%3A%20Nightmare%20at%20Sea"
