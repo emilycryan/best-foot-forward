@@ -209,12 +209,35 @@ a { color: var(--pink-dark); }
 .fun-pick-note { margin: 3px 0 8px; color: var(--base); font-size: 14px; line-height: 1.5; }
 .fun-pick-link { font-size: 13px; font-weight: 700; color: var(--pink-dark); text-decoration: none; }
 .fun-pick-link:hover { text-decoration: underline; }
+
+/* ---- equation block (thesis line) ---- */
+.equation { margin: 22px 0; padding: 20px 18px; background: var(--lightest); border: 1px solid var(--line); border-radius: 8px; clear: both; display: grid; gap: 11px; }
+.eqrow { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 7px 12px; text-align: center; }
+.eqrow .term { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
+.eqrow .op { font-size: 18px; font-weight: 800; color: var(--base); }
+.eqrow .out { font-size: 16px; font-weight: 800; }
+.eqrow .out.good { color: var(--green); }
+.eqrow .out.bad { color: var(--base); }
+
+/* ---- skills grid (trainable coping mechanisms) ---- */
+.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0; clear: both; }
+.skill { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; padding: 15px 17px 16px; background: #fff; }
+.skill .n { align-self: flex-start; padding: 3px 10px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
+.skill h4 { margin: 9px 0 8px; font-size: 17px; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; color: var(--ink); }
+.skill .def { margin: 0 0 13px; font-size: 14px; color: var(--base); line-height: 1.5; flex: 1; }
+.skill .me { margin: 0; font-size: 14px; line-height: 1.55; color: #2c2c2c; padding-top: 12px; border-top: 1px solid var(--line); }
+.skill .me b { font-weight: 800; }
+.skill.c1 .n { background: var(--pink); } .skill.c1 .me b { color: var(--pink-dark); }
+.skill.c2 .n { background: var(--teal); } .skill.c2 .me b { color: var(--teal); }
+.skill.c3 .n { background: var(--orange); } .skill.c3 .me b { color: var(--orange); }
+.skill.c4 .n { background: var(--purple); } .skill.c4 .me b { color: var(--purple); }
+
 /* ---- responsive ---- */
 @media (max-width: 720px) {
   .home-main { grid-template-columns: 1fr; }
   .feed { border-right: none; }
   .vitals { grid-template-columns: 1fr 1fr; }
-  .proto, .fun-grid { grid-template-columns: 1fr; }
+  .proto, .fun-grid, .skills { grid-template-columns: 1fr; }
   .entry-head { flex-direction: column-reverse; }
   .entry-photo, .entry-photo img { width: 100%; }
   .entry-body img.float-right.xs, .proto-body img.float-right.xs,
