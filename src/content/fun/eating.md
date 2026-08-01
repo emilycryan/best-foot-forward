@@ -28,6 +28,10 @@ picks:
     note: "Nom nom nom Maple Creme Oreos! These taste a bit like the BTS Brown Sugar Pancake Oreos without the weird blue color. They are also ... creamier? Less sweet? Not sure but those Canadians sure do know how to make anything better with the blood of trees."
     image: "/entries/maple-oreos.jpg"
     imageAlt: "An orange Christie 'Maple Creme Oreo / Crème à l'érable' package baked in Canada, with golden sandwich cookies, scattered red maple leaves, a bottle of maple syrup, and a badge reading 'Made with Real Quebec Maple Syrup.'"
+  - name: "Dark Chocolate Oreos"
+    note: "Dark chocolate: check. Oreos: check. Two amazing things that combine to taste like ... an Oreo. The dark chocolate isn't influencing the standard Oreo flavor much here, but honestly, I can't hate them."
+    image: "/entries/darkchoc-oreos.jpg"
+    imageAlt: "A blue Nabisco Family Size OREO package labeled 'Dark Chocolate Flavor Creme,' with a large chocolate sandwich cookie graphic, a 'Made with Real Cocoa' badge, chocolate curls, and text reading 'Chocolate Sandwich Cookies, Net Wt 1 lb 1 oz.'"
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
