@@ -232,6 +232,14 @@ a { color: var(--pink-dark); }
 .skill.c3 .n { background: var(--orange); } .skill.c3 .me b { color: var(--orange); }
 .skill.c4 .n { background: var(--purple); } .skill.c4 .me b { color: var(--purple); }
 
+/* ---- exercise grid (machine routine, responsive 3 -> 2 -> 1) ---- */
+.entry-body .exercises, .proto-body .exercises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0; clear: both; }
+.entry-body .exercises figure, .proto-body .exercises figure { display: flex; flex-direction: column; margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+.entry-body .exercises img, .proto-body .exercises img { width: 100%; height: 148px; object-fit: contain; margin: 0; padding: 10px; border: 0; border-radius: 0; background: #fff; }
+.entry-body .exercises figcaption, .proto-body .exercises figcaption { margin-top: auto; padding: 9px 10px; font-size: 13px; font-weight: 800; text-align: center; letter-spacing: -.01em; color: var(--ink); border-top: 1px solid var(--line); }
+@media (max-width: 720px) { .entry-body .exercises, .proto-body .exercises { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .entry-body .exercises, .proto-body .exercises { grid-template-columns: 1fr; } }
+
 /* ---- responsive ---- */
 @media (max-width: 720px) {
   .home-main { grid-template-columns: 1fr; }
