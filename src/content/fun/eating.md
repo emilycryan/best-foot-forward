@@ -32,6 +32,10 @@ picks:
     note: "Dark chocolate: check. Oreos: check. Two amazing things that combine to taste like ... an Oreo. The dark chocolate isn't influencing the standard Oreo flavor much here, but honestly, I can't hate them."
     image: "/entries/darkchoc-oreos.jpg"
     imageAlt: "A blue Nabisco Family Size OREO package labeled 'Dark Chocolate Flavor Creme,' with a large chocolate sandwich cookie graphic, a 'Made with Real Cocoa' badge, chocolate curls, and text reading 'Chocolate Sandwich Cookies, Net Wt 1 lb 1 oz.'"
+  - name: "Lemon Oreos"
+    note: "I assumed these would be mind-blowingly good; they're fine. They taste like the cheap version you'd get at a church picnic. Meh."
+    image: "/entries/lemonoreo.jpg"
+    imageAlt: "A yellow Party Size OREO package labeled 'Lemon Flavor Creme,' with a golden sandwich cookie split to show pale yellow filling, a lemon wedge and green leaves, and the blue OREO logo."
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
