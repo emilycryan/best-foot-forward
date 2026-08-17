@@ -14,6 +14,10 @@ picks:
     note: "Booger, tuckered out from just being a perfect pup. Me, exhausted from regrowing foot parts. 12/10, had a good nap together and would recommend."
     image: "/entries/napdog.jpeg"
     imageAlt: "Booger the dog curled up fast asleep during a nap."
+  - name: "A Visit from the Pickle Fairy"
+    note: "The pickle fairy, Deb, came to visit last week and brought fun stories about hiking and all things pickles! Including pickle hummus (holy moses, that stuff is legit) along with her own homemade pickle mocktail. Truly a fabulous way to spend a couple of hours while still stuck in my house."
+    image: "/entries/pickle-goodness.jpeg"
+    imageAlt: "On a wooden table: a tub of Wegmans Dill Pickle Seasoned Hummus with a yellow and blue label, a rocks glass of pale green pickle mocktail over ice with a whole pickle perched on the rim, and a bag of crackers labeled 'Breaking Bread' resting behind them."
 ---
 
 The small intangible stuff: sunny windowsills, dog naps, and tiny wins that have nothing to do with my foot.

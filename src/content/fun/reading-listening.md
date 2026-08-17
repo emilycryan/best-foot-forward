@@ -10,6 +10,11 @@ picks:
     url: "https://archive.org/details/attentionkmartshoppers"
     image: "/entries/kmart.png"
     imageAlt: "Vintage K-Mart storefront sign in its classic red script logo."
+  - name: "Scamfluencers"
+    note: "I've been listening to Wondery's Scamfluencers podcast that's been out for years, and just because I'm laid up and not commuting into the office weekly doesn't mean I'm missing it. It's still just as good, just as scammy."
+    url: "https://podcasts.apple.com/us/podcast/scamfluencers/id1616682405"
+    image: "/entries/scamfluencer.jpeg"
+    imageAlt: "Cover art for the Scamfluencers podcast: a torn-paper collage of a woman's face in close-up with green eyeshadow, overlaid with the title in bold white and neon-yellow lettering and an 'audible ORIGINAL' banner across the top."
 ---
 
 Books on the nightstand, podcasts in my ears, and the playlists getting me through PT.
