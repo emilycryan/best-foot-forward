@@ -36,6 +36,18 @@ picks:
     note: "I assumed these would be mind-blowingly good; they're fine. They taste like the cheap version you'd get at a church picnic. Meh."
     image: "/entries/lemonoreo.jpg"
     imageAlt: "A yellow Party Size OREO package labeled 'Lemon Flavor Creme,' with a golden sandwich cookie split to show pale yellow filling, a lemon wedge and green leaves, and the blue OREO logo."
+  - name: "Banana Oreos"
+    note: "A Golden Oreo with a filling that tastes like Laffy Taffy. Not banana pudding, not banana anything that grew on a tree; straight-up banana taffy. A very weird experience, NGL."
+    image: "/entries/banana-oreos.jpeg"
+    imageAlt: "A yellow Oreo package labeled 'Banana Pudding' with a 'Twist Lick Vote' badge, sitting in swirls of yellow pudding surrounded by vanilla wafers, banana slices, and cookie crumbs."
+  - name: "Deep Fried Oreos"
+    note: "A burnt regular Oreo tucked inside a Golden Oreo. Also odd, but edible; that's the whole review."
+    image: "/entries/deepfried-oreos.jpeg"
+    imageAlt: "An orange Oreo Limited Edition package labeled 'Deep Fried' with a 'Twist Lick Vote' badge and a golden sandwich cookie, sitting on a pile of fried Oreo bites."
+  - name: "Chicken & Waffles Oreos"
+    note: "By far the best of the three Twist Lick Vote flavors. Tastes like a salted speculoos cookie. Definitely something to get used to, but I don't hate it."
+    image: "/entries/chickwaffles-oreos.jpeg"
+    imageAlt: "An orange Oreo Limited Edition package labeled 'Chicken & Waffles' with a 'Twist Lick Vote' badge, waffle-embossed golden sandwich cookies, and fried chicken drumsticks on a waffle plate."
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
