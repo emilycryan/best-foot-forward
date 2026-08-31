@@ -48,6 +48,10 @@ picks:
     note: "By far the best of the three Twist Lick Vote flavors. Tastes like a salted speculoos cookie. Definitely something to get used to, but I don't hate it."
     image: "/entries/chickwaffles-oreos.jpeg"
     imageAlt: "An orange Oreo Limited Edition package labeled 'Chicken & Waffles' with a 'Twist Lick Vote' badge, waffle-embossed golden sandwich cookies, and fried chicken drumsticks on a waffle plate."
+  - name: "Apple Pie Oreos"
+    note: "A 10 of 10! A PERFECT Oreo and a much-needed one after those three weird-o Twist Lick Vote flavors. Golden cookie, apple pie and vanilla creme; tastes exactly like pie à la mode."
+    image: "/entries/applepie-oreos.jpg"
+    imageAlt: "A blue Oreo Limited Edition package labeled 'Apple Pie a la Mode Flavor Creme,' with a slice of lattice-topped apple pie drizzled with cream and a golden Oreo sandwich cookie."
 ---
 
 Snacks, treats, and the comfort food that makes a hard recovery day go down easier.
