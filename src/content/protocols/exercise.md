@@ -16,4 +16,8 @@ It looks like a gadget, but it's doing real PT work. Living on crutches 24/7 dum
 
 Twenty minutes of floor stretches every morning, following the Beginner section of [*John Travolta, Staying Fit!*](https://www.amazon.com/John-Travolta-Staying-fit-resistance/dp/0671497987) (1984, spandex included). It's all non-weight-bearing floor work, so it's safe even in the soft-cast-and-stitches phase, and it directly counters what couch-and-crutches life does to a body: tight hips, a locked-up back, hunched shoulders. The rules are simple: every day, no skipping, no jumping ahead to the Intermediate section, and no weight training until the doctor clears it. [The origin story is in the journal](/entries/2026-07-09-physical).
 
+## Waking up the new ankle: band work and step-downs
+
+Once the walking CAM brace entered the rotation, PT shifted from range-of-motion to actively loading and firing the new ankle tendon. The current set: **stretchy-band flexion**, **inversion and eversion band work**, **step-downs**, and **quick-step front loading**. Small, deliberate movements that start to prep the ankle for what will eventually be a return to pavement pounding. [The story is in the journal](/entries/2026-09-01-life-is-a-highway).
+
 _More PT detail coming as the recovery progresses._
